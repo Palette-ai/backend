@@ -35,6 +35,21 @@ If git yells at you and you're convinced you still need to push:
 git push -f origin HEAD
 ```
 
+## Undoing Unwanted Changes
+For getting rid of edits you made to a file but don't want to commit.
+
+### Restore
+```
+git restore file_name_here
+```
+You'll never be able to get these edits back.
+
+### Stash
+```
+git stash
+```
+This will take all your uncommitted edits and save them *somewhere*. I've never actually wanted to get them back but it is possible. Many people use `git stash` as a trash can basically.
+
 
 ## Rebasing
 This is a good way to make sure the changes you're making are based on how the main branch currently looks. It's entirely possible someone else has merged changes to `main` since you checked out your branch. Rebasing ensures GitHub understands you're not trying to rewrite someone else's commits.
