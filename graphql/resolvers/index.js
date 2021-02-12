@@ -1,7 +1,7 @@
-import { usersResolver } from './users.js'
+import { usersResolver } from './users.js';
 
 export default {
-	Mutation: {
-		...usersResolver.Mutation
-	}
-}
+  Mutation: {
+    ...usersResolver.Mutation,
+  },
+};
