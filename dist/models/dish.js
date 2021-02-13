@@ -15,9 +15,17 @@ var _mongooseTimestamp2 = _interopRequireDefault(_mongooseTimestamp);
 
 var _graphqlComposeMongoose = require("graphql-compose-mongoose");
 
+var _graphqlComposeMongoose2 = _interopRequireDefault(_graphqlComposeMongoose);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const DishSchema = exports.DishSchema = new _mongoose.Schema({
+const {
+  Schema
+} = _mongoose2.default;
+const {
+  composeWithMongoose
+} = _graphqlComposeMongoose2.default;
+const DishSchema = exports.DishSchema = new Schema({
   name: {
     type: String,
     trim: true,
@@ -36,7 +44,7 @@ const DishSchema = exports.DishSchema = new _mongoose.Schema({
     }
   },
   ratings: {
-    type: [_mongoose.Schema.Types.ObjectId],
+    type: [Schema.Types.ObjectId],
     ref: 'DishRating'
   }
 });
@@ -44,4 +52,4 @@ DishSchema.plugin(_mongooseTimestamp2.default);
 
 const Dish = exports.Dish = _mongoose2.default.model('Dish', DishSchema);
 
-const DishTC = exports.DishTC = (0, _graphqlComposeMongoose.composeWithMongoose)(Dish);
+const DishTC = exports.DishTC = composeWithMongoose(Dish);

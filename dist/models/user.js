@@ -15,9 +15,17 @@ var _mongooseTimestamp2 = _interopRequireDefault(_mongooseTimestamp);
 
 var _graphqlComposeMongoose = require("graphql-compose-mongoose");
 
+var _graphqlComposeMongoose2 = _interopRequireDefault(_graphqlComposeMongoose);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const UserSchema = exports.UserSchema = new _mongoose.Schema({
+const {
+  Schema
+} = _mongoose2.default;
+const {
+  composeWithMongoose
+} = _graphqlComposeMongoose2.default;
+const UserSchema = exports.UserSchema = new Schema({
   dateOfBirth: {
     type: Date
   },
@@ -32,4 +40,4 @@ UserSchema.plugin(_mongooseTimestamp2.default);
 
 const User = exports.User = _mongoose2.default.model('User', UserSchema);
 
-const UserTC = exports.UserTC = (0, _graphqlComposeMongoose.composeWithMongoose)(User);
+const UserTC = exports.UserTC = composeWithMongoose(User);

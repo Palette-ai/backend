@@ -17,10 +17,10 @@ export const DishSchema = new Schema({
   tags: {
     type: [Number],
     required: true,
-    validate: {
-      validator: Number.isInteger,
-      message: '{VALUE} is not an integer value'
-    }
+    // validate: {
+    //   validator: Number.isInteger,
+    //   message: '{VALUE} is not an integer value'
+    // }
   },
   ratings: {
     type: [Schema.Types.ObjectId],

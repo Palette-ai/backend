@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.DishRatingMutation = exports.DishRatingQuery = undefined;
 
-var _DishRating = require("../models/DishRating");
+var _DishRating = require("../models/DishRating.js");
 
 const DishRatingQuery = {
   dishRatingById: _DishRating.DishRatingTC.getResolver('findById'),

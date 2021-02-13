@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RestaurantMutation = exports.RestaurantQuery = undefined;
 
-var _Restaurant = require("../models/Restaurant");
+var _Restaurant = require("../models/Restaurant.js");
 
 const RestaurantQuery = {
   restaurantById: _Restaurant.RestaurantTC.getResolver('findById'),

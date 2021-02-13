@@ -8,11 +8,13 @@ var _dotenv = require("dotenv");
 
 var _dotenv2 = _interopRequireDefault(_dotenv);
 
-var _connectDB = require("./utils/connectDB.js");
+var _connectFirebase = require("./utils/connectFirebase.js");
 
-var _connectDB2 = _interopRequireDefault(_connectDB);
+var _connectFirebase2 = _interopRequireDefault(_connectFirebase);
 
-var _index = require("./schema/index");
+require("./utils/connectMongo.js");
+
+var _index = require("./schema/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -20,6 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // import cors from 'cors'
 _dotenv2.default.config(); // import mongoose from 'mongoose';
+// eslint-disable-next-line no-unused-vars
 
 
 const {
@@ -47,4 +50,9 @@ const server = new ApolloServer({
     req
   })
 });
-(0, _connectDB2.default)(server);
+server.listen({
+  port: process.env.PORT
+}, () => {
+  console.log(`🚀 Server listening on port ${process.env.PORT}`);
+  console.log(`😷 Health checks available at ${process.env.HEALTH_ENDPOINT}`);
+}); // connectDB(server);

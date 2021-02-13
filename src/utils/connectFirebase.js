@@ -2,7 +2,7 @@
 import * as admin from 'firebase-admin';
 import colors from 'colors';
 
-const connectDB = async (server) => {
+const connectFirebase = async (server) => {
   // const MONGODB = process.env.MONGODB
   const PORT = process.env.PORT || 5000;
   try {
@@ -39,4 +39,4 @@ const connectDB = async (server) => {
   }
 };
 
-export default connectDB;
+export default connectFirebase;

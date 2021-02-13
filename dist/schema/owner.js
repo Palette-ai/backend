@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.OwnerMutation = exports.OwnerQuery = undefined;
 
-var _Owner = require("../models/Owner");
+var _Owner = require("../models/Owner.js");
 
 const OwnerQuery = {
   ownerById: _Owner.OwnerTC.getResolver('findById'),
