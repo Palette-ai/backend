@@ -1,4 +1,4 @@
-import { Owner, OwnerTC } from '../models/Owner.js';
+import { Owner, OwnerTC } from '../models/owner.js';
 
 const OwnerQuery = {
   ownerById: OwnerTC.getResolver('findById'),

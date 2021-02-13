@@ -1,4 +1,4 @@
-import { DishRating, DishRatingTC } from '../models/DishRating.js';
+import { DishRating, DishRatingTC } from '../models/dishrating.js';
 
 const DishRatingQuery = {
   dishRatingById: DishRatingTC.getResolver('findById'),

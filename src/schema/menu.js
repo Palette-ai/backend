@@ -1,4 +1,4 @@
-import { Menu, MenuTC } from '../models/Menu.js';
+import { Menu, MenuTC } from '../models/menu.js';
 
 const MenuQuery = {
   menuById: MenuTC.getResolver('findById'),

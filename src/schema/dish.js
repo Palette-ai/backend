@@ -1,4 +1,4 @@
-import { Dish, DishTC } from '../models/Dish.js';
+import { Dish, DishTC } from '../models/dish.js';
 
 const DishQuery = {
   dishById: DishTC.getResolver('findById'),

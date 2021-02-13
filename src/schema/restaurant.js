@@ -1,4 +1,4 @@
-import { Restaurant, RestaurantTC } from '../models/Restaurant.js';
+import { Restaurant, RestaurantTC } from '../models/restaurant.js';
 
 const RestaurantQuery = {
   restaurantById: RestaurantTC.getResolver('findById'),
