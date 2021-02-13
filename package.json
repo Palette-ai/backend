@@ -9,6 +9,7 @@
     "dev": "nodemon --exec npx babel-node src/server.js",
     "prettier": "prettier --config ./.prettierrc --write \"**/*.js\"",
     "lint": "yarn prettier --write --check --config ./.prettierrc \"**/*.js\" && eslint --fix ./src",
+    "start": "node src/server.js",
     "data:import": "./data/seeder.js",
     "data:destroy": "./data/seeder -d"
   },
