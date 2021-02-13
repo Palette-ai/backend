@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.MenuMutation = exports.MenuQuery = undefined;
 
-var _Menu = require("../models/Menu");
+var _Menu = require("../models/Menu.js");
 
 const MenuQuery = {
   menuById: _Menu.MenuTC.getResolver('findById'),

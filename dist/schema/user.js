@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.UserMutation = exports.UserQuery = undefined;
 
-var _user = require("../models/user");
+var _user = require("../models/user.js");
 
 const UserQuery = {
   userById: _user.UserTC.getResolver('findById'),

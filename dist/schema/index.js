@@ -6,20 +6,27 @@ Object.defineProperty(exports, "__esModule", {
 
 var _graphqlCompose = require("graphql-compose");
 
-var _dish = require("./dish");
+var _graphqlCompose2 = _interopRequireDefault(_graphqlCompose);
 
-var _dishrating = require("./dishrating");
+var _dish = require("./dish.js");
 
-var _menu = require("./menu");
+var _dishrating = require("./dishrating.js");
 
-var _owner = require("./owner");
+var _menu = require("./menu.js");
 
-var _restaurant = require("./restaurant");
+var _owner = require("./owner.js");
 
-var _user = require("./user");
+var _restaurant = require("./restaurant.js");
 
-// import db from '../utils/db';
-const schemaComposer = new _graphqlCompose.SchemaComposer();
+var _user = require("./user.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const {
+  SchemaComposer
+} = _graphqlCompose2.default; // import db from '../utils/db';
+
+const schemaComposer = new SchemaComposer();
 schemaComposer.Query.addFields({ ..._dish.DishQuery,
   ..._dishrating.DishRatingQuery,
   ..._menu.MenuQuery,

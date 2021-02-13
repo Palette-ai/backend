@@ -4,9 +4,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 // import mongoose from 'mongoose';
 
-import connectDB from './utils/connectDB.js';
-// import resolvers from './graphql/resolvers/index.js'
-// import typeDefs from './graphql/TypeDefs.js'
+
+// eslint-disable-next-line no-unused-vars
+import connectFirebase from './utils/connectFirebase.js';
+import './utils/connectMongo.js';
 import schema from './schema/index.js';
 
 const { ApolloServer } = apollo;
@@ -31,4 +32,9 @@ const server = new ApolloServer({
   context: ({ req }) => ({ req }),
 });
 
-connectDB(server);
+// server.listen({ port: process.env.PORT }, () => {
+//   console.log(`🚀 Server listening on port ${process.env.PORT}`);
+//   console.log(`😷 Health checks available at ${process.env.HEALTH_ENDPOINT}`);
+// });
+
+connectFirebase(server);

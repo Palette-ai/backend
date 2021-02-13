@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.DishMutation = exports.DishQuery = undefined;
 
-var _Dish = require("../models/Dish");
+var _Dish = require("../models/Dish.js");
 
 const DishQuery = {
   dishById: _Dish.DishTC.getResolver('findById'),
