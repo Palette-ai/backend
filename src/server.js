@@ -32,9 +32,9 @@ const server = new ApolloServer({
   context: ({ req }) => ({ req }),
 });
 
-server.listen({ port: process.env.PORT }, () => {
-  console.log(`🚀 Server listening on port ${process.env.PORT}`);
-  console.log(`😷 Health checks available at ${process.env.HEALTH_ENDPOINT}`);
-});
+// server.listen({ port: process.env.PORT }, () => {
+//   console.log(`🚀 Server listening on port ${process.env.PORT}`);
+//   console.log(`😷 Health checks available at ${process.env.HEALTH_ENDPOINT}`);
+// });
 
-// connectDB(server);
+connectFirebase(server);
