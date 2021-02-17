@@ -14,17 +14,22 @@ export const DishSchema = new Schema({
     type: String,
     required: true,
   },
-  tags: {
+  average_rating: {
+    type: Number,
+  },
+  features: {
     type: [Number],
     required: true,
-    // validate: {
-    //   validator: Number.isInteger,
-    //   message: '{VALUE} is not an integer value'
-    // }
   },
-  ratings: {
-    type: [Schema.Types.ObjectId],
-    ref: 'DishRating',
+  description: {
+    type: String,
+  },
+  tags: {
+    type: [Number],
+    // required: true,
+  },
+  rating_ids: {
+    type: [String],
   },
 });
 DishSchema.plugin(timestamps);

@@ -11,8 +11,11 @@ export const UserSchema = new Schema({
   name: {
     type: String,
   },
-  location: {
+  zipcode: {
     type: String,
+  },
+  rating_ids: {
+  	type: [String],
   },
 });
 UserSchema.plugin(timestamps);
