@@ -5,14 +5,12 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const MenuSchema = new Schema({
-  restaurant: {
-    type: Schema.Types.ObjectId,
-    ref: 'Restaurant',
+  restaurant_id: {
+    type: String,
     required: true,
   },
-  dishes: {
-    type: [Schema.Types.ObjectId],
-    ref: 'Dish',
+  dish_ids: {
+    type: [String],
     required: true,
   },
 });
