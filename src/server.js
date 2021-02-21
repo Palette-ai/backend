@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 // import mongoose from 'mongoose';
 
-
 // eslint-disable-next-line no-unused-vars
 import connectFirebase from './utils/connectFirebase.js';
 import './utils/connectMongo.js';

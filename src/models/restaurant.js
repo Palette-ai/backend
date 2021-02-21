@@ -22,8 +22,5 @@ export const RestaurantSchema = new Schema({
 });
 RestaurantSchema.plugin(timestamps);
 
-export const Restaurant = mongoose.model(
-  'Restaurant',
-  RestaurantSchema
-);
+export const Restaurant = mongoose.model('Restaurant', RestaurantSchema);
 export const RestaurantTC = composeWithMongoose(Restaurant);
