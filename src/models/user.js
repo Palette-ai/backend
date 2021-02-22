@@ -15,7 +15,7 @@ export const UserSchema = new Schema({
     type: String,
   },
   rating_ids: {
-  	type: [String],
+    type: [String],
   },
 });
 UserSchema.plugin(timestamps);

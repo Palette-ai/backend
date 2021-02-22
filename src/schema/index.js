@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import pkg from 'graphql-compose';
 const { SchemaComposer } = pkg;
 
