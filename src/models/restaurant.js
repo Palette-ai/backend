@@ -7,7 +7,8 @@ const { composeWithMongoose } = pkg;
 export const RestaurantSchema = new Schema({
   restaurant_id_num: {
     type: Number,
-    required: true
+    required: true,
+    unique: true,
   },
   owner_id: {
     type: Number,
