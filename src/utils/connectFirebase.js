@@ -1,8 +1,10 @@
+/* eslint-disable require-await */
 // import mongoose from 'mongoose'
 import * as admin from 'firebase-admin';
+// eslint-disable-next-line no-unused-vars
 import colors from 'colors';
 
-const connectFirebase = async (server) => {
+const connectFirebase = async (app) => {
   // const MONGODB = process.env.MONGODB
   const PORT = process.env.PORT || 5000;
   try {
@@ -28,14 +30,15 @@ const connectFirebase = async (server) => {
         )
       : console.log('Firebase not connected');
 
-    if (server) {
-      server.listen({ port: PORT }).then(({ url }) => {
-        console.log(`🚀  Server ready at ${url}`.yellow.underline);
+    if (app) {
+      app.listen({ port: PORT }, () => {
+        console.log(`🚀  Server ready at port ${process.env.PORT}`.yellow.underline);
       });
+      // server.close();
     }
   } catch (error) {
     console.error(`Error: ${error.message}`.red.underline.bold);
-    server.stop();
+    // app.close();
   }
 };
 
