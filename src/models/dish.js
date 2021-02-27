@@ -33,10 +33,6 @@ export const DishSchema = new Schema({
     type: [Number],
     // required: true,
   },
-  dated_added: {
-    type: Date,
-    required: True
-  }
 });
 DishSchema.plugin(timestamps);
 
