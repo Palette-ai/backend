@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import axios from 'axios';
+import bodyParser from 'body-parser';
 
 const axiosurl = 'https://palette-ml.herokuapp.com/';
 // const axiosurl = 'localhost:7000/';
@@ -15,6 +16,7 @@ import './utils/connectMongo.js';
 import schema from './schema/index.js';
 
 const app = express();
+app.use(bodyParser());
 
 const { ApolloServer } = apollo;
 
@@ -58,10 +60,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/rec', (req, res) => {
+  console.log(req.body);
   axios({
     method: 'post',
     url: axiosurl + 'rec',
-    data: req
+    data: req.body,
   })
     .then((response) => {
       res.send(response);
