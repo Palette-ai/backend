@@ -7,7 +7,8 @@ const { composeWithMongoose } = pkg;
 export const DishSchema = new Schema({
   dish_id_num: {
     type: Number,
-    required: true
+    required: true,
+    unique: true,
   },
   dish_name: {
     type: String,
