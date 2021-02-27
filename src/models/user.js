@@ -26,10 +26,6 @@ export const UserSchema = new Schema({
   email: {
     type: String,
   },
-  date_added: {
-    type: Date,
-    required: true
-  }
 });
 UserSchema.plugin(timestamps);
 
