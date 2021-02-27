@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 import axios from 'axios';
 import bodyParser from 'body-parser';
 
-// const axiosurl = 'https://palette-ml.herokuapp.com/';
-const axiosurl = 'http://localhost:7000/';
+const axiosurl = 'https://palette-ml.herokuapp.com/';
+// const axiosurl = 'http://localhost:7000/';
 
 dotenv.config();
 
