@@ -5,7 +5,7 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const RestaurantSchema = new Schema({
-  restaurant_id: {
+  restaurant_id_num: {
     type: Number,
     required: true
   },

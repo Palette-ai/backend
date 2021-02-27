@@ -5,7 +5,7 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const UserSchema = new Schema({
-  user_id: {
+  user_id_num: {
     type: Number,
     required: true
   },

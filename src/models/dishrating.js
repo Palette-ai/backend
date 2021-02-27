@@ -5,7 +5,7 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const DishRatingSchema = new Schema({
-  rating_id: {
+  rating_id_num: {
     type: Number,
     required: true
   },
