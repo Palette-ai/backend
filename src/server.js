@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 import axios from 'axios';
 import bodyParser from 'body-parser';
 
-const axiosurl = 'https://palette-ml.herokuapp.com/';
-// const axiosurl = 'localhost:7000/';
+// const axiosurl = 'https://palette-ml.herokuapp.com/';
+const axiosurl = 'http://localhost:7000/';
 
 dotenv.config();
 
@@ -60,14 +60,15 @@ app.get('/', (req, res) => {
 });
 
 app.post('/rec', (req, res) => {
-  console.log(req.body);
+  console.log('From client:', req.body);
   axios({
     method: 'post',
     url: axiosurl + 'rec',
     data: req.body,
   })
     .then((response) => {
-      res.send(response);
+      console.log('From Flask:', response.data);
+      res.send(response.data);
     })
     .catch((e) => {
       console.log('Error:', e.message);
