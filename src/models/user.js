@@ -7,7 +7,8 @@ const { composeWithMongoose } = pkg;
 export const UserSchema = new Schema({
   user_id_num: {
     type: Number,
-    required: true
+    required: true,
+    unique: true,
   },
   username: {
     type: String,
