@@ -1,13 +1,20 @@
-import apollo from 'apollo-server';
-// import cors from 'cors'
+import apollo from 'apollo-server-express';
+import express from 'express';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import axios from 'axios';
+
+const axiosurl = 'https://palette-ml.herokuapp.com/';
+// const axiosurl = 'localhost:7000/';
+
 dotenv.config();
-// import mongoose from 'mongoose';
 
 // eslint-disable-next-line no-unused-vars
 import connectFirebase from './utils/connectFirebase.js';
 import './utils/connectMongo.js';
 import schema from './schema/index.js';
+
+const app = express();
 
 const { ApolloServer } = apollo;
 
@@ -31,9 +38,38 @@ const server = new ApolloServer({
   context: ({ req }) => ({ req }),
 });
 
-// server.listen({ port: process.env.PORT }, () => {
-//   console.log(`🚀 Server listening on port ${process.env.PORT}`);
-//   console.log(`😷 Health checks available at ${process.env.HEALTH_ENDPOINT}`);
-// });
+server.applyMiddleware({
+  app,
+  path: '/graphql',
+  cors: true,
+  onHealthCheck: () =>
+      // eslint-disable-next-line no-undef
+      new Promise((resolve, reject) => {
+          if (mongoose.connection.readyState > 0) {
+              resolve();
+          } else {
+              reject();
+          }
+      }),
+});
 
-connectFirebase(server);
+app.get('/', (req, res) => {
+  res.send('<h1>Congrats you found the Palette backend!!!!!!!!!!!</h1>');
+});
+
+app.post('/rec', (req, res) => {
+  axios({
+    method: 'post',
+    url: axiosurl + 'rec',
+    data: req
+  })
+    .then((response) => {
+      res.send(response);
+    })
+    .catch((e) => {
+      console.log('Error:', e.message);
+      res.status(520).json({status: e.status, message: e.message});
+    });
+});
+
+connectFirebase(app);
