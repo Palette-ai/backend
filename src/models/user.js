@@ -5,21 +5,31 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const UserSchema = new Schema({
-  dateOfBirth: {
-    type: Date,
+  user_id: {
+    type: Number,
+    required: true
+  },
+  username: {
+    type: String,
+    required: true
   },
   name: {
     type: String,
   },
+  birthday: {
+    type: Date,
+    required: true
+  },
   zipcode: {
     type: String,
-  },
-  rating_ids: {
-    type: [String],
   },
   email: {
     type: String,
   },
+  date_added: {
+    type: Date,
+    required: true
+  }
 });
 UserSchema.plugin(timestamps);
 

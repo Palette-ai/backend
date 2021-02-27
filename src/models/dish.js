@@ -5,13 +5,17 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const DishSchema = new Schema({
-  name: {
+  dish_id: {
+    type: Number,
+    required: true
+  },
+  dish_name: {
     type: String,
     trim: true,
     required: true,
   },
   restaurant_id: {
-    type: String,
+    type: Number,
     required: true,
   },
   average_rating: {
@@ -19,7 +23,7 @@ export const DishSchema = new Schema({
   },
   features: {
     type: [Number],
-    required: true,
+    // required: true, can make required later
   },
   description: {
     type: String,
@@ -28,9 +32,10 @@ export const DishSchema = new Schema({
     type: [Number],
     // required: true,
   },
-  rating_ids: {
-    type: [String],
-  },
+  dated_added: {
+    type: Date,
+    required: True
+  }
 });
 DishSchema.plugin(timestamps);
 
