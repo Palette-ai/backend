@@ -1,4 +1,4 @@
-import { Dictionary, DictionaryTC } from '../models/Dictionary.js';
+import { Dictionary, DictionaryTC } from '../models/dictionary.js';
 
 const DictionaryQuery = {
   dictionaryById: DictionaryTC.getResolver('findById'),
