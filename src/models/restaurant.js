@@ -21,10 +21,6 @@ export const RestaurantSchema = new Schema({
   location: {
     type: String,
   },
-  date_added: {
-    type: Date,
-    required: true
-  }
 });
 RestaurantSchema.plugin(timestamps);
 
