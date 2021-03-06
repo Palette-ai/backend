@@ -5,17 +5,12 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const DishRatingSchema = new Schema({
-  rating_id_num: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
   dish_id: {
-    type: Number,
+    type: String,
     required: true,
   },
   user_id: {
-    type: Number,
+    type: String,
     required: true,
   },
   rating: {
