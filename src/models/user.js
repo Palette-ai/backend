@@ -5,16 +5,17 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const UserSchema = new Schema({
-  username: {
+  firebase_id: {
     type: String,
-    required: true
+    required: true,
   },
   name: {
     type: String,
+    required: true,
   },
   birthday: {
     type: Date,
-    required: true
+    // required: true,
   },
   zipcode: {
     type: String,
@@ -22,6 +23,9 @@ export const UserSchema = new Schema({
   email: {
     type: String,
   },
+  username: {
+    type: String,
+  }
 });
 UserSchema.plugin(timestamps);
 
