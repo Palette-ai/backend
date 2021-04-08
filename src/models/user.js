@@ -13,6 +13,10 @@ export const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  liked_dishes: {
+    type: [String],
+    required: true,
+  },
   birthday: {
     type: Date,
     // required: true,
