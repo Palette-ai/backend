@@ -16,6 +16,10 @@ export const RestaurantSchema = new Schema({
   location: {
     type: String,
   },
+  phone_number: {
+    type: String,
+    required: true,
+  }
 });
 RestaurantSchema.plugin(timestamps);
 
