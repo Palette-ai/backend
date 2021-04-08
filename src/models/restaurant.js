@@ -5,10 +5,6 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const RestaurantSchema = new Schema({
-  owner_id: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
@@ -16,6 +12,13 @@ export const RestaurantSchema = new Schema({
   location: {
     type: String,
   },
+  phone_number: {
+    type: String,
+    required: true,
+  },
+  plus_code: {
+    type: String,
+  }
 });
 RestaurantSchema.plugin(timestamps);
 
