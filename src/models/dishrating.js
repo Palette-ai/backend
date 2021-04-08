@@ -21,6 +21,11 @@ export const DishRatingSchema = new Schema({
     type: String,
     trim: true,
   },
+  upvotes: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
 });
 DishRatingSchema.plugin(timestamps);
 
