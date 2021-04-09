@@ -23,7 +23,6 @@ export const DishRatingSchema = new Schema({
   },
   upvotes: {
     type: Number,
-    required: true,
     default: 0,
   },
 });
