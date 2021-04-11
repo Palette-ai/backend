@@ -18,7 +18,13 @@ export const RestaurantSchema = new Schema({
   },
   plus_code: {
     type: String,
-  }
+  },
+  latitude: {
+    type: Number,
+  },
+  longitude: {
+    type: Number,
+  },
 });
 RestaurantSchema.plugin(timestamps);
 
