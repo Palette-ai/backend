@@ -5,10 +5,6 @@ import pkg from 'graphql-compose-mongoose';
 const { composeWithMongoose } = pkg;
 
 export const UserSchema = new Schema({
-  firebase_id: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
