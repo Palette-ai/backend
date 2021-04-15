@@ -25,6 +25,10 @@ export const RestaurantSchema = new Schema({
   longitude: {
     type: Number,
   },
+  description: {
+    type: String,
+    required: true,
+  }
 });
 RestaurantSchema.plugin(timestamps);
 
