@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import timestamps from 'mongoose-timestamp';
 import pkg from 'graphql-compose-mongoose';
-const { composeWithMongoose } = pkg;
+const { composeMongoose } = pkg;
 
 export const UserSchema = new Schema({
   name: {
@@ -30,4 +30,4 @@ export const UserSchema = new Schema({
 UserSchema.plugin(timestamps);
 
 export const User = mongoose.model('User', UserSchema);
-export const UserTC = composeWithMongoose(User);
+export const UserTC = composeMongoose(User);

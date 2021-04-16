@@ -1,20 +1,20 @@
 import { Dictionary, DictionaryTC } from '../models/dictionary.js';
 
 const DictionaryQuery = {
-  dictionaryById: DictionaryTC.getResolver('findById'),
-  dictionaryByIds: DictionaryTC.getResolver('findByIds'),
-  dictionaryOne: DictionaryTC.getResolver('findOne'),
-  dictionaryCount: DictionaryTC.getResolver('count'),
-  dictionaryConnection: DictionaryTC.getResolver('connection'),
-  dictionaryPagination: DictionaryTC.getResolver('pagination'),
+  dictionaryById: DictionaryTC.mongooseResolvers.findById(),
+  dictionaryByIds: DictionaryTC.mongooseResolvers.findByIds(),
+  dictionaryOne: DictionaryTC.mongooseResolvers.findOne(),
+  dictionaryCount: DictionaryTC.mongooseResolvers.count(),
+  dictionaryConnection: DictionaryTC.mongooseResolvers.connection(),
+  dictionaryPagination: DictionaryTC.mongooseResolvers.pagination(),
 };
 
 const DictionaryMutation = {
-  dictionaryCreateOne: DictionaryTC.getResolver('createOne'),
-  dictionaryUpdateById: DictionaryTC.getResolver('updateById'),
-  dictionaryUpdateOne: DictionaryTC.getResolver('updateOne'),
-  dictionaryRemoveById: DictionaryTC.getResolver('removeById'),
-  dictionaryRemoveOne: DictionaryTC.getResolver('removeOne'),
+  dictionaryCreateOne: DictionaryTC.mongooseResolvers.createOne(),
+  dictionaryUpdateById: DictionaryTC.mongooseResolvers.updateById(),
+  dictionaryUpdateOne: DictionaryTC.mongooseResolvers.updateOne(),
+  dictionaryRemoveById: DictionaryTC.mongooseResolvers.removeById(),
+  dictionaryRemoveOne: DictionaryTC.mongooseResolvers.removeOne(),
 
   // append elements to arrays
   dictionaryAddFeature: {

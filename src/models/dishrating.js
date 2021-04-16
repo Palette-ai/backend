@@ -2,7 +2,9 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import timestamps from 'mongoose-timestamp';
 import pkg from 'graphql-compose-mongoose';
-const { composeWithMongoose } = pkg;
+const { composeMongoose } = pkg;
+import { UserTC } from './user.js';
+import { DishTC } from './dish.js';
 
 export const DishRatingSchema = new Schema({
   dish_id: {
@@ -28,5 +30,23 @@ export const DishRatingSchema = new Schema({
 });
 DishRatingSchema.plugin(timestamps);
 
-export const DishRating = mongoose.model('DishRating', DishRatingSchema);
-export const DishRatingTC = composeWithMongoose(DishRating);
+const DishRating = mongoose.model('DishRating', DishRatingSchema);
+const DishRatingTC = composeMongoose(DishRating);
+
+DishRatingTC.addRelation('user', {
+  resolver: () => UserTC.mongooseResolvers.findById({ lean: true }),
+  prepareArgs: {
+    _id: (s) => mongoose.Types.ObjectId(s.user_id),
+  },
+  projection: { user_id: true },
+});
+
+DishRatingTC.addRelation('dish', {
+  resolver: () => DishTC.mongooseResolvers.findById({ lean: true }),
+  prepareArgs: {
+    _id: (s) => mongoose.Types.ObjectId(s.dish_id),
+  },
+  projection: { dish_id: true },
+});
+
+export { DishRating, DishRatingTC };

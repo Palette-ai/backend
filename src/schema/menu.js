@@ -1,24 +1,24 @@
 import { Menu, MenuTC } from '../models/menu.js';
 
 const MenuQuery = {
-  menuById: MenuTC.getResolver('findById'),
-  menuByIds: MenuTC.getResolver('findByIds'),
-  menuOne: MenuTC.getResolver('findOne'),
-  menuMany: MenuTC.getResolver('findMany'),
-  menuCount: MenuTC.getResolver('count'),
-  menuConnection: MenuTC.getResolver('connection'),
-  menuPagination: MenuTC.getResolver('pagination'),
+  menuById: MenuTC.mongooseResolvers.findById(),
+  menuByIds: MenuTC.mongooseResolvers.findByIds(),
+  menuOne: MenuTC.mongooseResolvers.findOne(),
+  menuMany: MenuTC.mongooseResolvers.findMany(),
+  menuCount: MenuTC.mongooseResolvers.count(),
+  menuConnection: MenuTC.mongooseResolvers.connection(),
+  menuPagination: MenuTC.mongooseResolvers.pagination(),
 };
 
 const MenuMutation = {
-  menuCreateOne: MenuTC.getResolver('createOne'),
-  menuCreateMany: MenuTC.getResolver('createMany'),
-  menuUpdateById: MenuTC.getResolver('updateById'),
-  menuUpdateOne: MenuTC.getResolver('updateOne'),
-  menuUpdateMany: MenuTC.getResolver('updateMany'),
-  menuRemoveById: MenuTC.getResolver('removeById'),
-  menuRemoveOne: MenuTC.getResolver('removeOne'),
-  menuRemoveMany: MenuTC.getResolver('removeMany'),
+  menuCreateOne: MenuTC.mongooseResolvers.createOne(),
+  menuCreateMany: MenuTC.mongooseResolvers.createMany(),
+  menuUpdateById: MenuTC.mongooseResolvers.updateById(),
+  menuUpdateOne: MenuTC.mongooseResolvers.updateOne(),
+  menuUpdateMany: MenuTC.mongooseResolvers.updateMany(),
+  menuRemoveById: MenuTC.mongooseResolvers.removeById(),
+  menuRemoveOne: MenuTC.mongooseResolvers.removeOne(),
+  menuRemoveMany: MenuTC.mongooseResolvers.removeMany(),
 
   // append elements to arrays
   menuAddDish: {

@@ -1,24 +1,24 @@
 import { Dish, DishTC } from '../models/dish.js';
 
 const DishQuery = {
-  dishById: DishTC.getResolver('findById'),
-  dishByIds: DishTC.getResolver('findByIds'),
-  dishOne: DishTC.getResolver('findOne'),
-  dishMany: DishTC.getResolver('findMany'),
-  dishCount: DishTC.getResolver('count'),
-  dishConnection: DishTC.getResolver('connection'),
-  dishPagination: DishTC.getResolver('pagination'),
+  dishById: DishTC.mongooseResolvers.findById(),
+  dishByIds: DishTC.mongooseResolvers.findByIds(),
+  dishOne: DishTC.mongooseResolvers.findOne(),
+  dishMany: DishTC.mongooseResolvers.findMany(),
+  dishCount: DishTC.mongooseResolvers.count(),
+  dishConnection: DishTC.mongooseResolvers.connection(),
+  dishPagination: DishTC.mongooseResolvers.pagination(),
 };
 
 const DishMutation = {
-  dishCreateOne: DishTC.getResolver('createOne'),
-  dishCreateMany: DishTC.getResolver('createMany'),
-  dishUpdateById: DishTC.getResolver('updateById'),
-  dishUpdateOne: DishTC.getResolver('updateOne'),
-  dishUpdateMany: DishTC.getResolver('updateMany'),
-  dishRemoveById: DishTC.getResolver('removeById'),
-  dishRemoveOne: DishTC.getResolver('removeOne'),
-  dishRemoveMany: DishTC.getResolver('removeMany'),
+  dishCreateOne: DishTC.mongooseResolvers.createOne(),
+  dishCreateMany: DishTC.mongooseResolvers.createMany(),
+  dishUpdateById: DishTC.mongooseResolvers.updateById(),
+  dishUpdateOne: DishTC.mongooseResolvers.updateOne(),
+  dishUpdateMany: DishTC.mongooseResolvers.updateMany(),
+  dishRemoveById: DishTC.mongooseResolvers.removeById(),
+  dishRemoveOne: DishTC.mongooseResolvers.removeOne(),
+  dishRemoveMany: DishTC.mongooseResolvers.removeMany(),
 
   // append elements to arrays
   dishAddFeature: {

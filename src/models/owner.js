@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import timestamps from 'mongoose-timestamp';
 import pkg from 'graphql-compose-mongoose';
-const { composeWithMongoose } = pkg;
+const { composeMongoose } = pkg;
 
 export const OwnerSchema = new Schema({
   restaurant_id: {
@@ -20,4 +20,4 @@ export const OwnerSchema = new Schema({
 OwnerSchema.plugin(timestamps);
 
 export const Owner = mongoose.model('Owner', OwnerSchema);
-export const OwnerTC = composeWithMongoose(Owner);
+export const OwnerTC = composeMongoose(Owner);

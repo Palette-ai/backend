@@ -2,10 +2,10 @@
 import { DishRating, DishRatingTC } from '../models/dishrating.js';
 
 const DishRatingQuery = {
-  dishRatingById: DishRatingTC.getResolver('findById'),
-  dishRatingByIds: DishRatingTC.getResolver('findByIds'),
-  dishRatingOne: DishRatingTC.getResolver('findOne'),
-  dishRatingMany: DishRatingTC.getResolver('findMany')
+  dishRatingById: DishRatingTC.mongooseResolvers.findById(),
+  dishRatingByIds: DishRatingTC.mongooseResolvers.findById(),
+  dishRatingOne: DishRatingTC.mongooseResolvers.findOne(),
+  dishRatingMany: DishRatingTC.mongooseResolvers.findMany()
                               .addFilterArg({
                                 name: 'hasReviewText',
                                 type: 'Boolean', // also can be 'Int Float Boolean ID String! [String] AnyNamedType' 
@@ -21,20 +21,20 @@ const DishRatingQuery = {
                                   }
                                 },
                               }),
-  dishRatingCount: DishRatingTC.getResolver('count'),
-  dishRatingConnection: DishRatingTC.getResolver('connection'),
-  dishRatingPagination: DishRatingTC.getResolver('pagination'),
+  dishRatingCount: DishRatingTC.mongooseResolvers.count(),
+  dishRatingConnection: DishRatingTC.mongooseResolvers.connection(),
+  dishRatingPagination: DishRatingTC.mongooseResolvers.pagination(),
 };
 
 const DishRatingMutation = {
-  dishRatingCreateOne: DishRatingTC.getResolver('createOne'),
-  dishRatingCreateMany: DishRatingTC.getResolver('createMany'),
-  dishRatingUpdateById: DishRatingTC.getResolver('updateById'),
-  dishRatingUpdateOne: DishRatingTC.getResolver('updateOne'),
-  dishRatingUpdateMany: DishRatingTC.getResolver('updateMany'),
-  dishRatingRemoveById: DishRatingTC.getResolver('removeById'),
-  dishRatingRemoveOne: DishRatingTC.getResolver('removeOne'),
-  dishRatingRemoveMany: DishRatingTC.getResolver('removeMany'),
+  dishRatingCreateOne: DishRatingTC.mongooseResolvers.createOne(),
+  dishRatingCreateMany: DishRatingTC.mongooseResolvers.createMany(),
+  dishRatingUpdateById: DishRatingTC.mongooseResolvers.updateById(),
+  dishRatingUpdateOne: DishRatingTC.mongooseResolvers.updateOne(),
+  dishRatingUpdateMany: DishRatingTC.mongooseResolvers.updateMany(),
+  dishRatingRemoveById: DishRatingTC.mongooseResolvers.removeById(),
+  dishRatingRemoveOne: DishRatingTC.mongooseResolvers.removeOne(),
+  dishRatingRemoveMany: DishRatingTC.mongooseResolvers.removeMany(),
 };
 
 export { DishRatingQuery, DishRatingMutation };
