@@ -5,22 +5,26 @@ const DishRatingQuery = {
   dishRatingById: DishRatingTC.mongooseResolvers.findById(),
   dishRatingByIds: DishRatingTC.mongooseResolvers.findById(),
   dishRatingOne: DishRatingTC.mongooseResolvers.findOne(),
-  dishRatingMany: DishRatingTC.mongooseResolvers.findMany()
-                              .addFilterArg({
-                                name: 'hasReviewText',
-                                type: 'Boolean', // also can be 'Int Float Boolean ID String! [String] AnyNamedType' 
-                                description: 'Search by regExp',
-                                query: (rawQuery, value, resolveParams) => {
-                                  if (value) {
-                                    // eslint-disable-next-line no-useless-escape
-                                    rawQuery.review = new RegExp("^(?!\s*$).+");
-                                  }
-                                  else {
-                                    // eslint-disable-next-line no-useless-escape
-                                    rawQuery.review = new RegExp("^$");
-                                  }
-                                },
-                              }),
+  dishRatingMany: DishRatingTC.mongooseResolvers.findMany({
+    filter: {
+      operators: true,
+    }
+  }),
+                              // .addFilterArg({
+                              //   name: 'hasReviewText',
+                              //   type: 'Boolean', // also can be 'Int Float Boolean ID String! [String] AnyNamedType' 
+                              //   description: 'Search by regExp',
+                              //   query: (rawQuery, value, resolveParams) => {
+                              //     if (value) {
+                              //       // eslint-disable-next-line no-useless-escape
+                              //       rawQuery.review = new RegExp("^(?!\s*$).+");
+                              //     }
+                              //     else {
+                              //       // eslint-disable-next-line no-useless-escape
+                              //       rawQuery.review = new RegExp("^$");
+                              //     }
+                              //   },
+                              // }),
   dishRatingCount: DishRatingTC.mongooseResolvers.count(),
   dishRatingConnection: DishRatingTC.mongooseResolvers.connection(),
   dishRatingPagination: DishRatingTC.mongooseResolvers.pagination(),
