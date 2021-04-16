@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import timestamps from 'mongoose-timestamp';
 import pkg from 'graphql-compose-mongoose';
-const { composeWithMongoose } = pkg;
+const { composeMongoose } = pkg;
+import { RestaurantTC } from './restaurant.js';
 
 export const DishSchema = new Schema({
   dish_name: {
@@ -31,5 +32,15 @@ export const DishSchema = new Schema({
 });
 DishSchema.plugin(timestamps);
 
-export const Dish = mongoose.model('Dish', DishSchema);
-export const DishTC = composeWithMongoose(Dish);
+const Dish = mongoose.model('Dish', DishSchema);
+const DishTC = composeMongoose(Dish);
+
+DishTC.addRelation('restaurant', {
+  resolver: () => RestaurantTC.mongooseResolvers.findById({ lean: true }),
+  prepareArgs: {
+    _id: (s) => mongoose.Types.ObjectId(s.restaurant_id),
+  },
+  projection: { restaurant_id: true },
+});
+
+export { Dish, DishTC };

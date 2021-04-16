@@ -1,24 +1,24 @@
 import { Owner, OwnerTC } from '../models/owner.js';
 
 const OwnerQuery = {
-  ownerById: OwnerTC.getResolver('findById'),
-  ownerByIds: OwnerTC.getResolver('findByIds'),
-  ownerOne: OwnerTC.getResolver('findOne'),
-  ownerMany: OwnerTC.getResolver('findMany'),
-  ownerCount: OwnerTC.getResolver('count'),
-  ownerConnection: OwnerTC.getResolver('connection'),
-  ownerPagination: OwnerTC.getResolver('pagination'),
+  ownerById: OwnerTC.mongooseResolvers.findById(),
+  ownerByIds: OwnerTC.mongooseResolvers.findByIds(),
+  ownerOne: OwnerTC.mongooseResolvers.findOne(),
+  ownerMany: OwnerTC.mongooseResolvers.findMany(),
+  ownerCount: OwnerTC.mongooseResolvers.count(),
+  ownerConnection: OwnerTC.mongooseResolvers.connection(),
+  ownerPagination: OwnerTC.mongooseResolvers.pagination(),
 };
 
 const OwnerMutation = {
-  ownerCreateOne: OwnerTC.getResolver('createOne'),
-  ownerCreateMany: OwnerTC.getResolver('createMany'),
-  ownerUpdateById: OwnerTC.getResolver('updateById'),
-  ownerUpdateOne: OwnerTC.getResolver('updateOne'),
-  ownerUpdateMany: OwnerTC.getResolver('updateMany'),
-  ownerRemoveById: OwnerTC.getResolver('removeById'),
-  ownerRemoveOne: OwnerTC.getResolver('removeOne'),
-  ownerRemoveMany: OwnerTC.getResolver('removeMany'),
+  ownerCreateOne: OwnerTC.mongooseResolvers.createOne(),
+  ownerCreateMany: OwnerTC.mongooseResolvers.createMany(),
+  ownerUpdateById: OwnerTC.mongooseResolvers.updateById(),
+  ownerUpdateOne: OwnerTC.mongooseResolvers.updateOne(),
+  ownerUpdateMany: OwnerTC.mongooseResolvers.updateMany(),
+  ownerRemoveById: OwnerTC.mongooseResolvers.removeById(),
+  ownerRemoveOne: OwnerTC.mongooseResolvers.removeOne(),
+  ownerRemoveMany: OwnerTC.mongooseResolvers.removeMany(),
 };
 
 export { OwnerQuery, OwnerMutation };

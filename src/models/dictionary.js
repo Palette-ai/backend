@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import timestamps from 'mongoose-timestamp';
 import pkg from 'graphql-compose-mongoose';
-const { composeWithMongoose } = pkg;
+const { composeMongoose } = pkg;
 
 export const DictionarySchema = new Schema({
   features: [{
@@ -29,4 +29,4 @@ export const DictionarySchema = new Schema({
 DictionarySchema.plugin(timestamps);
 
 export const Dictionary = mongoose.model('Dictionary', DictionarySchema);
-export const DictionaryTC = composeWithMongoose(Dictionary);
+export const DictionaryTC = composeMongoose(Dictionary);

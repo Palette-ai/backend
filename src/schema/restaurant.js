@@ -1,24 +1,24 @@
 import { Restaurant, RestaurantTC } from '../models/restaurant.js';
 
 const RestaurantQuery = {
-  restaurantById: RestaurantTC.getResolver('findById'),
-  restaurantByIds: RestaurantTC.getResolver('findByIds'),
-  restaurantOne: RestaurantTC.getResolver('findOne'),
-  restaurantMany: RestaurantTC.getResolver('findMany'),
-  restaurantCount: RestaurantTC.getResolver('count'),
-  restaurantConnection: RestaurantTC.getResolver('connection'),
-  restaurantPagination: RestaurantTC.getResolver('pagination'),
+  restaurantById: RestaurantTC.mongooseResolvers.findById(),
+  restaurantByIds: RestaurantTC.mongooseResolvers.findByIds(),
+  restaurantOne: RestaurantTC.mongooseResolvers.findOne(),
+  restaurantMany: RestaurantTC.mongooseResolvers.findMany(),
+  restaurantCount: RestaurantTC.mongooseResolvers.count(),
+  restaurantConnection: RestaurantTC.mongooseResolvers.connection(),
+  restaurantPagination: RestaurantTC.mongooseResolvers.pagination(),
 };
 
 const RestaurantMutation = {
-  restaurantCreateOne: RestaurantTC.getResolver('createOne'),
-  restaurantCreateMany: RestaurantTC.getResolver('createMany'),
-  restaurantUpdateById: RestaurantTC.getResolver('updateById'),
-  restaurantUpdateOne: RestaurantTC.getResolver('updateOne'),
-  restaurantUpdateMany: RestaurantTC.getResolver('updateMany'),
-  restaurantRemoveById: RestaurantTC.getResolver('removeById'),
-  restaurantRemoveOne: RestaurantTC.getResolver('removeOne'),
-  restaurantRemoveMany: RestaurantTC.getResolver('removeMany'),
+  restaurantCreateOne: RestaurantTC.mongooseResolvers.createOne(),
+  restaurantCreateMany: RestaurantTC.mongooseResolvers.createMany(),
+  restaurantUpdateById: RestaurantTC.mongooseResolvers.updateById(),
+  restaurantUpdateOne: RestaurantTC.mongooseResolvers.updateOne(),
+  restaurantUpdateMany: RestaurantTC.mongooseResolvers.updateMany(),
+  restaurantRemoveById: RestaurantTC.mongooseResolvers.removeById(),
+  restaurantRemoveOne: RestaurantTC.mongooseResolvers.removeOne(),
+  restaurantRemoveMany: RestaurantTC.mongooseResolvers.removeMany(),
 };
 
 export { RestaurantQuery, RestaurantMutation };
