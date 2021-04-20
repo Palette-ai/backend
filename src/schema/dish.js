@@ -4,7 +4,11 @@ const DishQuery = {
   dishById: DishTC.mongooseResolvers.findById(),
   dishByIds: DishTC.mongooseResolvers.findByIds(),
   dishOne: DishTC.mongooseResolvers.findOne(),
-  dishMany: DishTC.mongooseResolvers.findMany(),
+  dishMany: DishTC.mongooseResolvers.findMany({
+    filter: {
+      operators: true,
+    }
+  }),
   dishCount: DishTC.mongooseResolvers.count(),
   dishConnection: DishTC.mongooseResolvers.connection(),
   dishPagination: DishTC.mongooseResolvers.pagination(),
