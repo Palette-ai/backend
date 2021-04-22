@@ -4,7 +4,11 @@ const RestaurantQuery = {
   restaurantById: RestaurantTC.mongooseResolvers.findById(),
   restaurantByIds: RestaurantTC.mongooseResolvers.findByIds(),
   restaurantOne: RestaurantTC.mongooseResolvers.findOne(),
-  restaurantMany: RestaurantTC.mongooseResolvers.findMany(),
+  restaurantMany: RestaurantTC.mongooseResolvers.findMany({
+    filter: {
+      operators: true,
+    }
+  }),
   restaurantCount: RestaurantTC.mongooseResolvers.count(),
   restaurantConnection: RestaurantTC.mongooseResolvers.connection(),
   restaurantPagination: RestaurantTC.mongooseResolvers.pagination(),
