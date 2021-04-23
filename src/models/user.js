@@ -3,6 +3,7 @@ const { Schema } = mongoose;
 import timestamps from 'mongoose-timestamp';
 import pkg from 'graphql-compose-mongoose';
 const { composeMongoose } = pkg;
+import { DishTC } from './dish.js';
 
 export const UserSchema = new Schema({
   name: {
@@ -29,5 +30,15 @@ export const UserSchema = new Schema({
 });
 UserSchema.plugin(timestamps);
 
-export const User = mongoose.model('User', UserSchema);
-export const UserTC = composeMongoose(User);
+const User = mongoose.model('User', UserSchema);
+const UserTC = composeMongoose(User);
+
+UserTC.addRelation('likes', {
+  resolver: () => DishTC.mongooseResolvers.findByIds({ lean: true }),
+  prepareArgs: {
+    _ids: (s) => s.liked_dishes.map(ld => mongoose.Types.ObjectId(ld)),
+  },
+  projection: { liked_dishes: true },
+});
+
+export { User, UserTC };
