@@ -32,6 +32,9 @@ export const DishSchema = new Schema({
   price: {
     type: Number,
   },
+  img: {
+    type: String,
+  },
 });
 DishSchema.plugin(timestamps);
 
