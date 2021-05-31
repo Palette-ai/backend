@@ -14,6 +14,8 @@ export const MenuSchema = new Schema({
     required: true,
   },
 });
+
+// adds 'createdAt' and 'updatedAt' fields
 MenuSchema.plugin(timestamps);
 
 export const Menu = mongoose.model('Menu', MenuSchema);

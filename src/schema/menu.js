@@ -30,7 +30,7 @@ const MenuMutation = {
         { _id: args.menu_id },
         { $addToSet: { dish_ids: args.dish_id } }
       );
-      if (!menu) return null; // or gracefully return an error etc...
+      if (!menu) return null;
       return Menu.findOne({ _id: args.menu_id }); // return the record
     },
   },
