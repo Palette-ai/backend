@@ -9,4 +9,3 @@ cache: yarn
 #  - npm install -g npm@latest
 script:
   # - yarn test
-  - npx jest --ci
