@@ -17,6 +17,8 @@ export const OwnerSchema = new Schema({
     trim: true,
   },
 });
+
+// adds 'createdAt' and 'updatedAt' fields
 OwnerSchema.plugin(timestamps);
 
 export const Owner = mongoose.model('Owner', OwnerSchema);

@@ -20,14 +20,12 @@ export const DishSchema = new Schema({
   },
   features: {
     type: [Number],
-    // required: true, can make required later
   },
   description: {
     type: String,
   },
   tags: {
     type: [Number],
-    // required: true,
   },
   price: {
     type: Number,
@@ -36,6 +34,8 @@ export const DishSchema = new Schema({
     type: String,
   },
 });
+
+// adds 'createdAt' and 'updatedAt' fields
 DishSchema.plugin(timestamps);
 
 const Dish = mongoose.model('Dish', DishSchema);

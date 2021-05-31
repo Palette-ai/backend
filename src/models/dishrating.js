@@ -28,6 +28,8 @@ export const DishRatingSchema = new Schema({
     default: 0,
   },
 });
+
+// adds 'createdAt' and 'updatedAt' fields
 DishRatingSchema.plugin(timestamps);
 
 const DishRating = mongoose.model('DishRating', DishRatingSchema);

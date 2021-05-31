@@ -2,11 +2,8 @@
 import * as pkg from 'graphql-compose';
 const { SchemaComposer } = pkg;
 
-// import db from '../utils/db';
-
 const schemaComposer = new SchemaComposer();
 
-import { DictionaryQuery, DictionaryMutation } from './dictionary.js';
 import { DishQuery, DishMutation } from './dish.js';
 import { DishRatingQuery, DishRatingMutation } from './dishrating.js';
 import { MenuQuery, MenuMutation } from './menu.js';
@@ -15,7 +12,6 @@ import { RestaurantQuery, RestaurantMutation } from './restaurant.js';
 import { UserQuery, UserMutation } from './user.js';
 
 schemaComposer.Query.addFields({
-  ...DictionaryQuery,
   ...DishQuery,
   ...DishRatingQuery,
   ...MenuQuery,
@@ -25,7 +21,6 @@ schemaComposer.Query.addFields({
 });
 
 schemaComposer.Mutation.addFields({
-  ...DictionaryMutation,
   ...DishMutation,
   ...DishRatingMutation,
   ...MenuMutation,

@@ -29,6 +29,8 @@ export const UserSchema = new Schema({
     type: String,
   }
 });
+
+// adds 'createdAt' and 'updatedAt' fields
 UserSchema.plugin(timestamps);
 
 const User = mongoose.model('User', UserSchema);

@@ -20,6 +20,7 @@ const UserMutation = {
   userRemoveOne: UserTC.mongooseResolvers.removeOne(),
   userRemoveMany: UserTC.mongooseResolvers.removeMany(),
 
+  // append elements to arrays
   userAddLikedDish: {
     type: UserTC,
     args: { user_id: 'String!', dish_id: 'String!' },
@@ -29,7 +30,7 @@ const UserMutation = {
         { _id: args.user_id },
         { $push: { liked_dishes: args.dish_id } }
       );
-      if (!user) return null; // or gracefully return an error etc...
+      if (!user) return null;
       return User.findOne({ _id: args.user_id }); // return the record
     },
   },
