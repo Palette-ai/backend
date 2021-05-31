@@ -32,12 +32,12 @@ const connectFirebase = async (app) => {
 
     if (app) {
       app.listen({ port: PORT }, () => {
-        console.log(`🚀  Server ready at port ${process.env.PORT}`.yellow.underline);
+        console.log(`🚀  Server ready at port ${process.env.PORT}`);
       });
       // server.close();
     }
   } catch (error) {
-    console.error(`Error: ${error.message}`.red.underline.bold);
+    console.error(`Error: ${error.message}`);
     // app.close();
   }
 };
