@@ -1,4 +1,4 @@
-import apollo from 'apollo-server-express';
+import * as apollo from 'apollo-server-express';
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -77,3 +77,5 @@ app.post('/rec', (req, res) => {
 });
 
 connectFirebase(app);
+
+export default app;

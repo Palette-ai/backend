@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import timestamps from 'mongoose-timestamp';
-import pkg from 'graphql-compose-mongoose';
+import * as pkg from 'graphql-compose-mongoose';
 const { composeMongoose } = pkg;
 
 export const OwnerSchema = new Schema({
