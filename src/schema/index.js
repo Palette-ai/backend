@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import pkg from 'graphql-compose';
+import * as pkg from 'graphql-compose';
 const { SchemaComposer } = pkg;
 
 // import db from '../utils/db';
