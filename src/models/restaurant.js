@@ -30,6 +30,8 @@ export const RestaurantSchema = new Schema({
     required: true,
   }
 });
+
+// automatically adds 'createdAt' and 'updatedAt' fields
 RestaurantSchema.plugin(timestamps);
 
 export const Restaurant = mongoose.model('Restaurant', RestaurantSchema);

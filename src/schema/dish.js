@@ -34,7 +34,7 @@ const DishMutation = {
         { _id: args.dish_id },
         { $addToSet: { features: args.feature_id } }
       );
-      if (!dish) return null; // or gracefully return an error etc...
+      if (!dish) return null;
       return Dish.findOne({ _id: args.dish_id }); // return the record
     },
   },
@@ -47,7 +47,7 @@ const DishMutation = {
         { _id: args.dish_id },
         { $addToSet: { tags: args.tag_id } }
       );
-      if (!dish) return null; // or gracefully return an error etc...
+      if (!dish) return null;
       return Dish.findOne({ _id: args.dish_id }); // return the record
     },
   },
@@ -60,7 +60,7 @@ const DishMutation = {
         { _id: args.dish_id },
         { $addToSet: { rating_ids: args.rating_id } }
       );
-      if (!dish) return null; // or gracefully return an error etc...
+      if (!dish) return null;
       return Dish.findOne({ _id: args.dish_id }); // return the record
     },
   },

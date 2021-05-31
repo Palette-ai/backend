@@ -56,7 +56,7 @@ server.applyMiddleware({
 });
 
 app.get('/', (req, res) => {
-  res.send('<h1>Congrats you found the Palette backend!!!!!!!!!!!</h1>');
+  res.send('<h1>Welcome to the Palette Backend!</h1>');
 });
 
 app.post('/rec', (req, res) => {
